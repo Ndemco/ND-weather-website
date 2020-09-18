@@ -36,14 +36,6 @@ app.get('/about', (req, res) => {
     })
 })
 
-app.get('/help', (req, res) => {
-    res.render('help', {
-        title: 'Help',
-        name: 'Nick DeMarco',
-        helpText: 'This is some helpful text'
-    })
-})
-
 app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
@@ -72,14 +64,6 @@ app.get('/weather', (req, res) => {
                 address
             })
         })
-    })
-})
-
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: '404 Error',
-        errorMessage: 'Help article not found',
-        name: 'Nick DeMarco'
     })
 })
 

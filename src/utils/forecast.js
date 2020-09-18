@@ -1,5 +1,10 @@
 const request = require("request")
 
+/*
+makes a request to weatherstack API and returns JSON containing weather conditions for the given latitude and longitude
+
+intended to take the latitiude and longitude coordinates returned by the geocode() method
+*/
 const forecast = (latitude, longitude, callback) => {
     const url = 'http://api.weatherstack.com/current?access_key=3e0ed4c38d2151518810009867cc1af2&query=' + latitude + ',' + longitude + '&units=f'
     request({ url, json: true }, (error, { body }) => {

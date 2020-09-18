@@ -58,6 +58,8 @@ app.get('/weather', (req, res) => {
             return res.send({ error })
         }
 
+        //no errors
+        //latitude and longitude params are taken from geocode() callback
         forecast(latitude, longitude, (error, forecastData) => {
             if (error) {
                 return res.send({ error })
